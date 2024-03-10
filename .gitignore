@@ -8,3 +8,6 @@ documents/
 
 # Ignore data folder
 data/
+
+# Ignore models folder
+models/
