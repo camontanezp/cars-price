@@ -26,3 +26,12 @@ def plot_distribution_of_target_by_feature(data, feature, target='price'):
     fig = px.box(data, x=feature, y=target)
     fig.update_layout(title=f'Distribution of price by {feature}')
     fig.show()
+
+def plot_scatter_of_target_vs_feature(data, feature, target='price'):
+    fig = px.scatter(data, x=feature, y=target)
+    fig.update_layout(title=f'{target} vs {feature}')
+    fig.show()
+
+def plot_scatter_of_target_vs_features(data, features, target='price'):
+    for feature in features:
+        plot_scatter_of_target_vs_feature(data, feature, target='price')
