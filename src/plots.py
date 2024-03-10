@@ -4,7 +4,7 @@ import plotly.express as px
 def plot_avg_target_time_series_by_feature(data, feature, target='price'):
     data_sorted = data.sort_values('sold_at', ascending=True, inplace=False)
     data_sorted_grouped = data_sorted.groupby(
-        [feature, 'sold_at'], as_index=False).agg({target: 'mean'}).rename(columns={target: 'avg_' + target})
+        [feature, 'sold_at'], as_index=False, observed=True).agg({target: 'mean'}).rename(columns={target: 'avg_' + target})
     fig = px.line(data_sorted_grouped, x='sold_at', y='avg_' + target, color=feature)
     fig.update_layout(title=f'Average {target} time series by {feature}')
     fig.show()
