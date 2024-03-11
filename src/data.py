@@ -20,7 +20,8 @@ def convert_object_columns_to_category(data):
     return data
 
 def get_train_test_data(data, features, target, test_size=0.2):
-    X = data[features]
-    y = data[target]
+    data_copy = data.copy()
+    X = data_copy[features]
+    y = data_copy[target]
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=42)
     return X, y, X_train, X_test, y_train, y_test
