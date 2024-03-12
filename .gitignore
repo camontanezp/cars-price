@@ -3,9 +3,6 @@
 __pycache__/
 .venv/
 
-# Ignore documents folder
-documents/
-
 # Ignore data folder
 data/
 
