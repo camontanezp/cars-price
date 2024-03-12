@@ -1,5 +1,6 @@
 from scipy import stats
 import pandas as pd
+import numpy as np
 
 
 def ttest_mean_price_difference_between_groups_after_filter(
@@ -29,3 +30,36 @@ def make_ttest_results_df(data, features, grouping_column, group_1, group_2):
         )
     
     return ttest_df
+
+def get_linear_regression_p_values(X, y, model):
+    # Extract coefficients
+    coefficients = model.coef_
+    # Compute p-values
+    n = len(y)
+    y_pred = model.predict(X)
+    residuals = y - y_pred
+    mse = np.mean(residuals**2)
+    var_X = np.var(X, axis=0)
+    t_values = coefficients / np.sqrt(mse / var_X)
+    p_values = 2 * (1 - stats.t.cdf(np.abs(t_values), n - X.shape[1]))
+
+    # Create a pandas DataFrame
+    result_df = pd.DataFrame({
+        'Attribute': X.columns,
+        'Coefficient': coefficients,
+        'P-value': p_values
+    })
+
+    return result_df.sort_values(by='P-value')
+
+def get_linear_regression_f_test_results(X, y, model):
+    n = len(y)
+    y_pred = model.predict(X)
+    residuals = y - y_pred
+    mse = np.mean(residuals**2)
+    y_mean = np.mean(y)
+    ssr = np.sum((y_pred - y_mean)**2)
+    f_stat = (ssr / X.shape[1]) / (mse / (n - X.shape[1] - 1))
+    p_val = 1 - stats.f.cdf(f_stat, X.shape[1], n - X.shape[1] - 1)
+    return f_stat, p_val
+
