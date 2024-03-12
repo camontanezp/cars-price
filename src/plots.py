@@ -43,6 +43,7 @@ def plot_scatter_of_target_vs_features(data, features, target='price'):
 def plot_shap_summary(metadata, model, X):
     if 'XGBoost linear' in metadata["name"]:
         print('Linear model detected. Shap explanation not supported.')
+        explainer = None
     elif 'Linear regression model' in metadata["name"]:
         explainer = shap.LinearExplainer(model, X)
         shap_values = explainer.shap_values(X)
