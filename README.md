@@ -27,6 +27,6 @@ This project uses Python 3.12.1 and poetry 1.7.1.
 To run it, follow these steps:
 - [Download Python](https://www.python.org/downloads/) (3.12) and install it.
 - [Install Poetry](https://python-poetry.org/docs/#installing-with-pipx).
-- Open a terminal and `cd` to the folder `cars-price` project folder.
+- Open a terminal and `cd` to the project's folder (the parent of this readme).
 - Poetry will create a virtual environment where to install the dependencies. If you want the virtual environment to be in the project's folder, run `poetry config virtualenvs.in-project true`.
 - Install the dependencies by running `poetry install`.
