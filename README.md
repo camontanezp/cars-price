@@ -30,3 +30,4 @@ To run it, follow these steps:
 - Open a terminal and `cd` to the project's folder (the parent of this readme).
 - Poetry will create a virtual environment where to install the dependencies. If you want the virtual environment to be in the project's folder, run `poetry config virtualenvs.in-project true`.
 - Install the dependencies by running `poetry install`.
+- Create the the `data/raw` folder and put the `data_pricing_challenge.csv` file in it.
