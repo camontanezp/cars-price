@@ -18,7 +18,7 @@ The notebooks in the `notebooks` folder are used for analysis, training models, 
 
 Notebooks numbered 01 and 02 are to be run first. Notebook numbered 09 can be run after each one of the notebooks numbered 03 to 08, to answer business questions based on each model.
 
-### Source code
+### Source code (src folder)
 The source code contains utility functions to support the work done in the notebooks.
 
 ### Requirements
