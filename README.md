@@ -1,6 +1,6 @@
 # Car prices prediction
 
-The project analyzes a dataset of cars with their characteristics and prices and uses the data train models for price prediction.
+This project analyzes a dataset of cars with their characteristics and prices and uses the data to train models for price prediction and answering business questions.
 
 ## Contents
 ### Notebooks
@@ -16,7 +16,7 @@ The notebooks in the `notebooks` folder are used for analysis, training models, 
 - `08_linear_model.ipynb` trains a simple linear regression.
 - `09_answer_questions.ipynb` analyzes a model and answers business questions with it.
 
-Notebooks numbered 01 and 02 are to be run first. Notebook numbered 09 can be run after each of the notebooks numbered 03 to 08, to answer business questions based on each model.
+Notebooks numbered 01 and 02 are to be run first. Notebook numbered 09 can be run after each one of the notebooks numbered 03 to 08, to answer business questions based on each model.
 
 ### Source code
 The source code contains utility functions to support the work done in the notebooks.
@@ -26,7 +26,7 @@ This project uses Python 3.12.1 and poetry 1.7.1.
 
 To run it, follow these steps:
 - [Download Python](https://www.python.org/downloads/) (3.12) and install it.
-- [Install Poetry](https://python-poetry.org/docs/#installing-with-pipx).
+- [Install Poetry](https://python-poetry.org/docs/#installing-with-pipx). Note: to install poetry with pipx, first [install pipx](https://pipx.pypa.io/latest/installation/). 
 - Open a terminal and `cd` to the project's folder (the parent of this readme).
 - Poetry will create a virtual environment where to install the dependencies. If you want the virtual environment to be in the project's folder, run `poetry config virtualenvs.in-project true`.
 - Install the dependencies by running `poetry install`.
